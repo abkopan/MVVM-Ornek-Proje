@@ -9,24 +9,23 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class AnasayfaViewModel @Inject constructor(var krepo : KisilerDaoRepository) : ViewModel() {
+open class AnasayfaViewModel @Inject constructor(var krepo: KisilerDaoRepository) : ViewModel() {
 
-    var kisilerListesi : MutableLiveData<List<Kisiler>> = MutableLiveData()
-            init{
-                kisileriYukle()
-                kisilerListesi = krepo.kisileriGetir()
-            }
-    fun ara(aramaKelimesi:String){
+    var kisilerListesi: MutableLiveData<List<Kisiler>> = MutableLiveData()
+
+    init {
+        kisilerListesi = krepo.kisileriGetir()
+    }
+
+    fun ara(aramaKelimesi: String) {
         krepo.kisiAra(aramaKelimesi)
     }
-    fun sil(kisi_id:Int){
-       krepo.kisiSil(kisi_id)
+
+    fun sil(kisi_id: Int) {
+        krepo.kisiSil(kisi_id)
     }
 
-    fun kisileriYukle(){
+    fun kisileriYukle() {
         krepo.tumKisileriAl()
     }
-
-
-
 }

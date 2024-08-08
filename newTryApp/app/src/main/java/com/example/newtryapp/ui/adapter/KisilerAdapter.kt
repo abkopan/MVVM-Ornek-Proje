@@ -15,7 +15,7 @@ import com.example.newtryapp.ui.fragment.AnaSayfaFragmentDirections
 import com.example.newtryapp.ui.viewmodel.AnasayfaViewModel
 import com.google.android.material.snackbar.Snackbar
 
-class KisilerAdapter(var mContext: Context,var kisilerListesi:List<Kisiler> , var viewModel: AnasayfaViewModel):
+open class KisilerAdapter(var mContext: Context,var kisilerListesi:List<Kisiler> , var viewModel: AnasayfaViewModel):
     RecyclerView.Adapter<KisilerAdapter.CardTasarimTutucu>() {
     inner class CardTasarimTutucu(binding:CardTasarimBinding) : RecyclerView.ViewHolder(binding.root){
         var binding:CardTasarimBinding

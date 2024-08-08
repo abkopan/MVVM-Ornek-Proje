@@ -28,7 +28,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class AnaSayfaFragment : Fragment(),SearchView.OnQueryTextListener{
     private lateinit var binding:FragmentAnaSayfaBinding
-    private lateinit var viewModel:AnasayfaViewModel
+    public lateinit var viewModel:AnasayfaViewModel
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding=DataBindingUtil.inflate(inflater,R.layout.fragment_ana_sayfa,container,false)
